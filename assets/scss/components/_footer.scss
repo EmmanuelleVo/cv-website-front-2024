@@ -1,0 +1,41 @@
+.footer {
+    background-color: $cBlack;
+    color: $cWhite;
+    &__container {
+        display: flex;
+    }
+
+    &__main {
+        &-header {
+            display: flex;
+            align-items: center;
+        }
+
+        &-logo {
+            position: relative;
+            & svg text {
+                fill: $cWhite;
+            }
+        }
+    }
+
+    &__copyright {
+        &-list {
+            display: flex;
+        }
+
+        &-item {
+            
+        }
+    }
+
+    &__aside {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+        &-container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

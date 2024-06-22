@@ -1,0 +1,7 @@
+.form {
+  &__error {
+    color: $cRed;
+    display: block;
+    margin-top: rem(10px);
+  }
+}
