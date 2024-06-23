@@ -22,3 +22,12 @@
     content: none !important;
   }
 }
+
+.c-wrapper {
+  max-width: calc(1430px + 15vw);
+  padding-right: 7.5vw;
+  padding-left:  7.5vw;
+  margin-left: auto;
+  margin-right: auto;
+
+}

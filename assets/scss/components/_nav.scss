@@ -4,14 +4,21 @@
   align-items: center;
 
   &__logo {
+    display: flex;
+    gap: rem(20px);
 
     &-text {
-      //font-size: r(14px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: r(14px);
+      text-transform: uppercase;
     }
   }
 
   &__links{
     display: flex;
+    gap: rem(60px);
   }
 
   &__links-container {
@@ -46,9 +53,10 @@
 
   &__link {
     position: relative;
-    display: block;
+    //display: block;
+    display: flex;
     color: $cBlack;
-    padding: rem(25px) rem(25px);
+    //padding: rem(25px) rem(25px);
     
     &.nuxt-link-active {
       & .nav__link__textWrapper {
@@ -255,4 +263,20 @@
       opacity: 1 !important;
     }
   }
+}
+
+.header__nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  padding-top: rem(45px);
+  padding-bottom: rem(45px);
+  background-color: $cWhite;
+}
+
+.is-scrolled {
+  padding-top: rem(25px);
+  padding-bottom: rem(25px);
 }

@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <div class="footer__container o-wrapper">
+        <div class="footer__container c-wrapper">
             <div class="footer__main">
                 <div class="footer__main-header">
                     <div class="footer__main-logo">
@@ -10,7 +10,7 @@
                     <div class="footer__main-title">
                         <p class="">Think we might click? 
                             <br> 
-                            <span class="bold"><NuxtLink to="/" title="contact" class="">Let's work together</NuxtLink> and find out.</span>
+                            <span class="bold"><NuxtLink to="/" title="contact" class="link">Let's work together</NuxtLink> and find out.</span>
                         </p>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
             <div class="footer__aside">
                 <div class="footer__aside-container">
                     <span class="footer__aside-title title">Address</span>
-                    <span class="footer__aside-content">{{ settings.address }}</span>
+                    <span class="footer__aside-content" style="max-width: 130px;">{{ settings.address }}</span>
                 </div>
                 <div class="footer__aside-container">
                     <span class="footer__aside-title title">About me</span>
@@ -38,13 +38,17 @@
                 </div>
                 <div class="footer__aside-container">
                     <span class="footer__aside-title title">Contact me</span>
-                    <NuxtLink to="tel:+32 498 62 48 15" title="Phone me" external class="footer__aside-content footer__link">BE: {{ settings.phoneNumber }}</NuxtLink>
-                    <NuxtLink :to="`mailto:${settings.email}`" title="Send me an email" external class="footer__aside-content footer__link">{{ settings.email}}</NuxtLink>
+                    <div class="footer__aside-list">
+                        <NuxtLink to="tel:+32 498 62 48 15" title="Phone me" external class="footer__aside-content footer__link">BE: {{ settings.phoneNumber }}</NuxtLink>
+                        <NuxtLink :to="`mailto:${settings.email}`" title="Send me an email" external class="footer__aside-content footer__link">{{ settings.email}}</NuxtLink>
+                    </div>
                 </div>
                 <div class="footer__aside-container">
                     <span class="footer__aside-title title u-visually-hidden">Links</span>
-                    <NuxtLink :to="settings.github" title="GitHub" external target="_blank" class="footer__aside-content footer__link">Github.com</NuxtLink>
+                    <div class="footer__aside-list">
+                        <NuxtLink :to="settings.github" title="GitHub" external target="_blank" class="footer__aside-content footer__link">Github.com</NuxtLink>
                     <NuxtLink :to="settings.linkedin" title="LinkedIn" external target="_blank" class="footer__aside-content footer__link">LinkedIn.com</NuxtLink>
+                    </div>
                 </div>
             </div>
         </div>

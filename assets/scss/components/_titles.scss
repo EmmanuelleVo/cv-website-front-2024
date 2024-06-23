@@ -45,4 +45,32 @@ $titleSizeFive: 20px;
   &--black {
     color: $cBlack;
   }
+
+  &--section {
+    font-size: rem(12px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    position: relative;
+    //font-family: Gilroy, sans-serif;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -110px;
+      top: 50%;
+      width: rem(60px);
+      height: rem(2px);
+      background-color: $cBlack;
+      transform: translateY(-50%);
+    }
+
+    &-mark {
+      position: absolute;
+
+
+    }
+  }
 }
+

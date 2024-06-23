@@ -8,7 +8,16 @@ export default defineNuxtConfig({
     dataset: process.env.DATASET,
 	},
   
-  modules: ['@nuxtjs/sanity'],
+  modules: [
+    '@nuxtjs/sanity', 
+    ['@nuxtjs/google-fonts', {
+      families: {
+        'Figtree': true,
+        download: true,
+        inject: true
+      }
+    }]
+  ],
 
   css: ['~/assets/scss/main.scss'],
 

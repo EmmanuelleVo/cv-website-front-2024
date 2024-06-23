@@ -1,0 +1,18 @@
+.home__s1 {
+    background-color: $cLightGrey;
+    padding-top: rem(150px);
+    padding-bottom: rem(150px);
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        & .excerpt {
+            padding-top: rem(100px);
+            padding-left: rem(60px);
+            & p {
+                margin-bottom: rem(55px);
+            }
+        }
+    }
+}

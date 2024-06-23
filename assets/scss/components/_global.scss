@@ -1,0 +1,27 @@
+.body {
+    background-color: $cWhite;
+}
+
+a {
+    text-decoration: none;
+}
+
+.excerpt {
+    & p {
+      font-family: 'Figtree', 'sans-serif';
+      font-size: rem(18px);
+      letter-spacing: -.012em;
+      line-height: 1.7;
+    }
+  
+    &--big {
+      font-size: max(33.28px,min(2.6vw,49.92px));
+      line-height: 1.2;
+      font-weight: 300;
+      padding-top: rem(100px);
+    }
+  }
+  
+  .bold {
+    font-weight: 700;
+  }
