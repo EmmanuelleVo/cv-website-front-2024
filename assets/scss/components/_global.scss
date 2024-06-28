@@ -10,18 +10,22 @@ a {
     & p {
       font-family: 'Figtree', 'sans-serif';
       font-size: rem(18px);
+      font-weight: 300;
       letter-spacing: -.012em;
-      line-height: 1.7;
+      line-height: 1.8;
     }
   
     &--big {
       font-size: max(33.28px,min(2.6vw,49.92px));
       line-height: 1.2;
-      font-weight: 300;
+      font-weight: 200;
       padding-top: rem(100px);
     }
   }
   
-  .bold {
-    font-weight: 700;
-  }
+.bold {
+ font-weight: 600;
+}
+.extra-bold {
+  font-weight: 800;
+ }

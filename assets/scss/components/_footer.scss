@@ -38,7 +38,13 @@
             line-height: 1.5;
             color: $cWhite;
             p {
-                font-size: 2.08vw;
+                //font-size: 2.08vw;
+                font-size: max(26.624px,min(2.08vw,39.936px));
+                font-weight: 200;
+
+                & .extra-bold {
+                    font-weight: 700;
+                }
             }
 
             & .link {
@@ -98,11 +104,11 @@
 
         &-title {
             color: $cWhite;
-            font-family: 'Questrial', 'sans-serif';
+            font-family: 'Poppins', 'sans-serif';
             font-size: rem(14px);
             text-transform: uppercase;
             letter-spacing: .14em;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: rem(38px);
         }
 

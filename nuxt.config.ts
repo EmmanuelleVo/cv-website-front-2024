@@ -7,17 +7,23 @@ export default defineNuxtConfig({
     projectId: process.env.PROJECT_ID,
     dataset: process.env.DATASET,
 	},
-  
+
   modules: [
-    '@nuxtjs/sanity', 
-    ['@nuxtjs/google-fonts', {
-      families: {
-        'Figtree': true,
-        download: true,
-        inject: true
-      }
-    }]
+    '@nuxtjs/sanity',
+    '@nuxtjs/google-fonts',
   ],
+  googleFonts: {
+    families: {
+      Poppins: {
+        wght: [200, 300, 400, 500, 600, 700, 800, 900],
+      },
+      Figtree: {
+        wght: [200, 300, 400, 500, 600, 700],
+      },
+    },
+    download: true, // Optional: to download fonts instead of using Google API
+    inject: true // Optional: to inject the fonts into the head of your HTML
+  },
 
   css: ['~/assets/scss/main.scss'],
 
