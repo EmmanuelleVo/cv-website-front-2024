@@ -10,7 +10,7 @@
                     <div class="footer__main-title">
                         <p class="">Think we might click? 
                             <br> 
-                            <span class="bold"><NuxtLink to="/" title="contact" class="link">Let's work together</NuxtLink> and find out.</span>
+                            <span class="extra-bold"><NuxtLink to="/" title="contact" class="link">Let's work together</NuxtLink> and find out.</span>
                         </p>
                     </div>
                 </div>

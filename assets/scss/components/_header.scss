@@ -72,6 +72,10 @@
       & .excerpt {
         padding-top: rem(51px);
       }
+
+      & .excerpt--big {
+        font-size: max(43.28px,min(2.6vw,49.92px));
+      }
     }
   }
 
@@ -80,6 +84,10 @@
     margin-right: -7.5vw;
     padding-left: rem(60px);
     flex: 1;
+
+    & img {
+      height: 100%;
+    }
   }
 
   &__mark {

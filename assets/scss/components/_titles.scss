@@ -48,11 +48,10 @@ $titleSizeFive: 20px;
 
   &--section {
     font-size: rem(12px);
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: .08em;
     position: relative;
-    //font-family: Gilroy, sans-serif;
 
     &:before {
       content: "";
@@ -68,7 +67,6 @@ $titleSizeFive: 20px;
 
     &-mark {
       position: absolute;
-
 
     }
   }

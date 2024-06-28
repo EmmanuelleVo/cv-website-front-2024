@@ -28,6 +28,11 @@
         display: flex;
         flex-direction: column;
     }
+
+    &__figure {
+        margin-left: rem(-60px);
+        margin-top: rem(50px);
+    }
     
     &__lists {
         display: flex;
@@ -48,9 +53,11 @@
         flex-direction: column;
         gap: rem(27px);
         & .title {
-            display: block;
+            font-family: 'Poppins', sans-serif;
             font-size: max(22.464px,min(1.56vw,29.952px));
-            margin-bottom: rem(39px);
+            font-weight: 700;
+            display: block;
+            margin-bottom: rem(12px); //39px
             line-height: 1.56;
         }
     }
@@ -59,6 +66,7 @@
         position: relative;
         padding-left: rem(31px);
         line-height: 1.8;
+        font-size: rem(18px);
         &:before {
             content: "";
             display: block;

@@ -26,7 +26,7 @@
   transition: 300ms ease background !important;
   padding: rem(17px) rem(40px);
   position: relative;
-  font-weight: 700;
+  font-weight: 600;
   z-index: 10;
   min-width: 179px;
 
@@ -52,13 +52,13 @@
 
       &:before {
         transform: translateX(0);
-        width: rem(190px);
-        transition: transform 300ms ease-in-out, width 300ms ease-in-out;
+        width: rem(200px);
+        transition: transform 400ms ease-in-out, width 400ms ease-in-out;
       }
 
       & span {
         transform: translateX(0);
-        transition: transform 300ms ease-in-out;
+        transition: transform 400ms ease-in-out;
       }
     }
 
@@ -74,12 +74,12 @@
       z-index: -1;
       width: rem(140px);
       transform: translateX(40px);
-      transition: transform 300ms ease-in-out, width 300ms ease-in-out;
+      transition: transform 400ms ease-in-out, width 400ms ease-in-out;
     }
 
     & span {
       transform: translateX(-40px);
-      transition: transform 300ms ease-in-out;
+      transition: transform 400ms ease-in-out;
     }
   }
 

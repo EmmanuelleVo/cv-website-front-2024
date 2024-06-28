@@ -75,7 +75,6 @@
  * Print................Reset-like styles taken from the HTML5 Boilerplate.
  * Hide.................Helper classes to hide content
  */
-
 $mq-responsive: true;
 $mq-breakpoints: (
         mobile:  425px,
@@ -152,6 +151,7 @@ $mq-static-breakpoint: desktop;
 
 // PAGES
 @import "pages/home";
+@import "pages/about";
 @import "pages/contact";
 
 // UTILITIES
