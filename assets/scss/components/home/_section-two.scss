@@ -1,0 +1,47 @@
+.home__s2 {
+    & .title--section-mark {
+        z-index: 20;
+        color: $cWhite;
+        padding-top: rem(100px);
+        & .title::before {
+            background-color: $cWhite;
+        }
+    }
+
+    &__container {
+        background-color: $cBlack;
+    }
+
+    .swiper-slide:not(.swiper-slide-visible) {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+      }
+      .swiper-pagination {
+        top: 6.25rem !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: 6.25rem !important;
+        width: auto !important;
+        height: auto;
+      }
+      
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: $cBlack; /* Couleur de la bullet */
+        opacity: 0.2;
+        border-radius: 0 !important;
+        border: solid 1px $cLightGrey;
+      }
+
+      .swiper-pagination-bullet + .swiper-pagination-bullet {
+        margin-left: rem(12px) !important;
+      }
+      
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+        background-color: $cYellow;
+        border: solid 1px $cYellow;
+      }
+}
