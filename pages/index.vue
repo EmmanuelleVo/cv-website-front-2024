@@ -70,6 +70,14 @@
                 translate: ['100%', 0, 0],
               },
             }"
+            :breakpoints="{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+          }"
             >
               <SwiperSlide v-for="(project, index) in data.projects" :key="project.key" class="card">
                 <div class="card__figure-container">

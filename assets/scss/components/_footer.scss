@@ -3,6 +3,10 @@
     padding-bottom: rem(94px);
     background-color: $cBlack;
     color: $cGrey;
+    @include mq($until: laptop) {
+        padding-top: rem(92px);
+        padding-bottom: rem(50px);
+    }
 
     & a {
         color: $cGrey;
@@ -15,16 +19,25 @@
 
     &__container {
         display: flex;
+        @include mq($until: laptop) {
+            flex-direction: column;
+        }
     }
 
     &__main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include mq($until: laptop) {
+            margin-bottom: rem(98px);
+        }
 
         &-header {
             display: flex;  
             gap: rem(35px);
+            @include mq($until: laptop) {
+                flex-direction: column;
+            }
         }
 
         &-logo {
@@ -38,9 +51,14 @@
             line-height: 1.5;
             color: $cWhite;
             p {
-                //font-size: 2.08vw;
                 font-size: max(26.624px,min(2.08vw,39.936px));
                 font-weight: 200;
+                @include mq($until: laptop) {
+                    font-size: 4.3vw;
+                }
+                @include mq($until: tablet) {
+                    font-size: 7.6vw;
+                }
 
                 & .extra-bold {
                     font-weight: 700;
@@ -76,9 +94,24 @@
     }
 
     &__copyright {
+        &-mobile {
+            @include mq($from: laptop) {
+                display: none;
+            }
+        }
+        &-desktop {
+            @include mq($until: laptop) {
+                display: none;
+            }
+        }
+
         &-list {
             display: flex;
             gap: rem(40px);
+            @include mq($until: tablet) {
+                flex-direction: column;
+                gap: rem(25px);
+            }
         }
 
         &-item {
@@ -95,11 +128,26 @@
         font-size: rem(14px);
         font-family: 'FigTree', 'sans-serif';
         max-width: rem(510px);
+        @include mq($until: laptop) {
+            max-width: 80%;
+            column-gap: rem(20px);
+        }
+        @include mq($until: tablet) {
+            grid-template-columns: 1fr;
+            max-width: 100%;
+        }
         
         &-container {
             display: flex;
             flex-direction: column;
             margin-bottom: rem(47px);
+
+            @include mq($until: tablet) {
+                &:nth-child(2) {
+                    grid-row: 3/4;
+                    margin-bottom: rem(20px);
+                }
+            }
         }
 
         &-title {
@@ -117,6 +165,12 @@
             flex-direction: column;
             gap: rem(22px);
             line-height: 1;
+        }
+
+        &-content {
+            @include mq($until: tablet) {
+                font-size: rem(16px);
+            }
         }
     }
 }

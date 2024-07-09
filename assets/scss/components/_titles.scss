@@ -63,6 +63,13 @@ $titleSizeFive: 20px;
       height: rem(2px);
       background-color: $cBlack;
       transform: translateY(-50%);
+
+      @include mq($until: laptop) {
+        left: -80px;
+      }
+      @include mq($until: tablet) {
+        left: -75px;
+      }
     }
 
     &-mark {

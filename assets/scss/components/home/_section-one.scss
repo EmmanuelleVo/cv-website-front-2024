@@ -6,12 +6,22 @@
     &__container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        @include mq($until: tablet) {
+            grid-template-columns: 1fr;
+        }
 
         & .excerpt {
             padding-top: rem(100px);
             padding-left: rem(60px);
+            @include mq($until: tablet) {
+                padding-top: rem(32px);
+                padding-left: 0;
+            }
             & p {
                 margin-bottom: rem(55px);
+                @include mq($until: tablet) {
+                    margin-bottom: rem(30px);
+                }
             }
         }
     }

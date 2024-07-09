@@ -2,6 +2,10 @@
     background-color: $cWhite;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 a {
     text-decoration: none;
 }
@@ -20,6 +24,14 @@ a {
       line-height: 1.2;
       font-weight: 200;
       padding-top: rem(100px);
+      @include mq($until: laptop) {
+        font-size: 5vw;
+        line-height: 1.31;
+      }
+      @include mq($until: tablet) {
+        font-size: 8vw;
+        padding-top: rem(52px);
+      }
     }
   }
   

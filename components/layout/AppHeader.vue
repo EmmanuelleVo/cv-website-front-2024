@@ -1,17 +1,16 @@
 <template>
   <div>
       <div class="header__nav">
-        <nav class="nav nav-primary c-wrapper">
+        <nav :class="['nav', 'nav-primary', 'c-wrapper', {'is-active': isActive, 'menu-open': isMenuOpen}]">
             <div class="header__nav-logo">
                 <NuxtLink to="/" title="Home" class="u-absolute">Home</NuxtLink>
                 <div class="nav__logo">
-                     <!-- TODO:SVGLOGO -->
                      <svg xmlns="http://www.w3.org/2000/svg" width="53" height="60"><g transform="translate(-106 -34)"><circle data-name="Ellipse 1" cx="18" cy="18" r="18" transform="translate(123 47)" fill="#ffee32"/><text transform="translate(107 83)" fill="#161617" font-size="50" font-family="HelveticaNeue-Bold, Helvetica Neue" font-weight="700"><tspan x="0" y="0">V</tspan></text></g></svg>
                     <div class="nav__logo-text"><span class="bold">Emmanuelle</span> Vo</div>
                  </div>
             </div>
             <div class="nav__wrapper">
-                <button class="hamburger">
+                <button :class="['hamburger', {'is-active': isActive, 'hamburger--slider': isActive}]" aria-label="Open menu" @click="toggleMenu">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
@@ -32,6 +31,23 @@
 </template>
 
 <script setup lang="ts">
+const isActive = ref(false)
+const isMenuOpen = ref(false)
+
+const toggleMenu = () => {
+  isActive.value = !isActive.value
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+watch(isMenuOpen, (newValue) => {
+  if (newValue) {
+    document.body.classList.add('no-scroll')
+    document.documentElement.classList.add('no-scroll')
+  } else {
+    document.body.classList.remove('no-scroll')
+    document.documentElement.classList.remove('no-scroll')
+  }
+})
 
 function handleScroll() {
     if (scrollY > 0) {

@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="footer__main-footer">
-                    <div class="footer__main-copyright footer__copyright">
+                    <div class="footer__main-copyright footer__copyright footer__copyright-desktop">
                         <ul class="footer__copyright-list">
                             <li class="footer__copyright-item">©cv.emmanuelle-vo.be 2024. All rights reserved.</li>
                             <li class="footer__copyright-item"><NuxtLink to="#" @click="disableLink">Terms and Conditions</NuxtLink></li>
@@ -51,6 +51,15 @@
                     </div>
                 </div>
             </div>
+            <div class="footer__copyright footer__copyright-mobile">
+                        <ul class="footer__copyright-list">
+                            <li class="footer__copyright-item">©cv.emmanuelle-vo.be 2024. All rights reserved.</li>
+                            <li class="footer__copyright-item"><NuxtLink to="#" @click="disableLink">Terms and Conditions</NuxtLink></li>
+                            <li class="footer__copyright-item"><NuxtLink to="#" @click="disableLink">Privacy Policy</NuxtLink></li>
+                            <li class="footer__copyright-item"><NuxtLink to="#" @click="disableLink">Cookie Policy</NuxtLink></li>
+                            <li class="footer__copyright-item"><NuxtLink to="#" @click="disableLink">Working Hours</NuxtLink></li>
+                        </ul>
+                    </div>
         </div>
     </footer>
 </template>

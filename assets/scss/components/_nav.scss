@@ -22,35 +22,33 @@
   &__links{
     display: flex;
     gap: rem(60px);
+    @include mq($until: laptop) {
+      flex-direction: column;
+    }
   }
 
   &__links-container {
     display: flex;
     @include mq($until: laptop) {
-      position: fixed;
-      top: 0;
+      position: absolute;
+      top: 100%;
       right: 0;
-      left: auto;
-      width: 300px; //TODO: minwidth
-      height: 100%;
+      left: 0;
+      //width: 300px; //TODO: minwidth
+      height: calc(100vh - 100%);
       z-index: 5;
       visibility: hidden; //TODO: remove
       /*transform: translateX(100%); TODO: uncomment */
       opacity: 0; //TODO: 0
       padding: rem(30px);
-      transform: translateX(300px);
-      transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      //transform: translateX(300px);
+      //transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       margin-right: 0;
       box-sizing: border-box;
       display: flex;
       flex-direction: column-reverse;
       justify-content: flex-end;
       align-items: center;
-    }
-
-    @include mq($until: mobile) {
-      width: 250px;
-      transform: translateX(250px);
     }
   }
 
@@ -74,9 +72,9 @@
       }
     }
     @include mq($until: laptop) {
-      color: $cWhite;
-      font-size: rem(20px);
+      font-size: rem(16px);
       width: 100%;
+      justify-content: center;
     }
 
     &__textWrapper {
@@ -238,10 +236,10 @@
         visibility: visible;
         //overflow-y: scroll;
         overflow-x: hidden;
-        transform: translateX(0);
-        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        //transform: translateX(0);
+        //transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         z-index: 5;
-        background-color: $cBlack;
+        background-color: rgba($color: $cWhite, $alpha: 0.98);
         z-index: 9999;
       }
     }
