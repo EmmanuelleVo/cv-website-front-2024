@@ -5,6 +5,26 @@
             padding: 0;
             display: flex;
             justify-content: flex-end;        
+            padding-left: rem(30px);
+            @include mq($until: laptop) {
+                padding-left: 0;
+                max-width: rem(280px);
+                max-height: rem(280px);
+                margin: 0 auto;
+            }
+        }
+        &__img {
+            object-fit: contain;
+        }
+        &__content {
+            @include mq($until: tablet) {
+                padding-bottom: 0;
+            }
+            &-inner {
+                @include mq($until: tablet) {
+                    padding-bottom: 0;
+                }
+            }
         }
     }
 
@@ -17,6 +37,15 @@
             margin-top: rem(91px);
             padding-top: rem(100px);
             padding-bottom: rem(100px);
+            margin-bottom: rem(50px);
+            @include mq($until: laptop) {
+                padding-top: rem(74px);
+                padding-bottom: rem(80px);
+            }
+            @include mq($until: tablet) {
+                padding: 0;
+                margin-bottom: 0;
+            }
 
             &::before {
                 content: "";
@@ -38,6 +67,17 @@
             max-width: rem(915px);
             padding: rem(100px) rem(90px);
             z-index: 2;
+            @include mq($until: laptop) {
+                padding: rem(40px) rem(26px);
+                margin-left: rem(94px);
+                max-width: rem(720px);
+            }
+            @include mq($until: tablet) {
+                max-width: 100%;
+                padding: rem(25px);
+                margin-left: auto;
+                margin-bottom: rem(50px);
+            }
 
             & .excerpt--big {
                 padding-top: 0;
@@ -47,9 +87,15 @@
 
         &__content {
             padding-top: rem(50px);
+            @include mq($until: tablet) {
+                padding-top: rem(30px);
+            }
             & .excerpt {
                 p {
                     line-height: 1.9;
+                    @include mq($until: tablet) {
+                        font-size: rem(16px);
+                    }
                 }
                 p + p {
                     padding-top: rem(36px);
@@ -63,9 +109,24 @@
             bottom: 0;
             left: 0;
             width: 50%;
-            max-width: 62rem;
+            max-width: rem(620px);
             height: 100%;
             z-index: 1;
+            @include mq($until: tablet) {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+            }
+        }
+
+        &__img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            @include mq($until: tablet) {
+                height: rem(300px);
+                object-position: 50%;
+            }
         }
     }
 }

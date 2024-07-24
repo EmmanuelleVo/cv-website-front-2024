@@ -34,6 +34,14 @@
             <h2 class="title title--section">{{ page.aboutPage.section_2_title}}</h2>
           </div>
           <div class="about__s1__inner">
+            <figure class="about__s1__figure">
+                <img
+                    :src="$urlFor(page.aboutPage.section_2_image).width(800).url()"
+                    class="about__s1__img"
+                    alt="person working on computer"
+                    loading="lazy"
+                />
+              </figure>
             <div class="about__s1__container">
             <p class="excerpt--big">Started out as a small division of a famous brand, turned into a <span class="extra-bold">change-driven machine.</span></p>
             <div class="about__s1__content">
@@ -42,14 +50,6 @@
               </div>
             </div>
           </div>
-          <figure class="about__s1__figure">
-              <img
-                  :src="$urlFor(page.aboutPage.section_2_image).width(800).url()"
-                  class="about__s1__img"
-                  alt="person working on computer"
-                  loading="lazy"
-              />
-            </figure>
           </div>
         </section>
     </div>
