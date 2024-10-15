@@ -25,6 +25,9 @@
             </figure>
             <div class="header__mark">
               <span class="header__mark-content">Scroll down for more</span>
+              <span class="header__mark-decoration">
+                <span class="header__mark-line"></span>
+              </span>
             </div>
           </div>
         </section>
@@ -43,7 +46,7 @@
                 />
               </figure>
             <div class="about__s1__container">
-            <p class="excerpt--big">Started out as a small division of a famous brand, turned into a <span class="extra-bold">change-driven machine.</span></p>
+            <p class="excerpt--big">Started out as a student with a passion in web, became a <span class="extra-bold">full-stack developer.</span></p>
             <div class="about__s1__content">
               <div class="excerpt">
                 <SanityContent :blocks="page.aboutPage.section_2_text" class="excerpt" />
@@ -57,6 +60,7 @@
 
 
 <script setup lang="ts">
+import gsap from "gsap";
 
 const query = groq`*[_type == 'page' && pageType == 'about'][0]{
   ...,
@@ -64,10 +68,42 @@ const query = groq`*[_type == 'page' && pageType == 'about'][0]{
 }`;
 
 const { data: page } = useSanityQuery(query);
-
-
+const aboutPage = computed(() => page.aboutPage);
 
 definePageMeta({
   title: 'About • CV - Emmanuelle Vo'
 })
+
+
+onMounted(() => {
+    gsap.fromTo(".header__container", 
+    { y: '10%', opacity: 0 },
+    { y: '0%', opacity: 1, duration: 1.5, ease: 'power2.out' }
+    );
+
+    const elements = [
+      { selector: ".title--section-mark", yStart: '-15%' },
+      { selector: ".about__s1__figure", xStart: '-15%' },
+      { selector: ".about__s1__container", xStart: '15%' },
+    ];
+
+    elements.forEach(({ selector, xStart = '0%', yStart = '0%'}) => {
+      gsap.fromTo(selector, 
+        { x: xStart, y: yStart, opacity: 0 },
+        { 
+          x: '0%', y: '0%', opacity: 1, duration: 2, ease: 'power2.out',
+          scrollTrigger: {
+            trigger: selector,
+            start: 'top 80%',
+            end: 'top 30%',
+            scrub: true,
+            once: true,
+          }
+        }
+      );
+    });
+
+
+  });
+
 </script>

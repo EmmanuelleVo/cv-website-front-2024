@@ -24,6 +24,9 @@
             </figure>
             <div class="header__mark">
               <span class="header__mark-content">Scroll down for more</span>
+              <span class="header__mark-decoration">
+                <span class="header__mark-line"></span>
+              </span>
             </div>
           </div>
         </section>
@@ -132,6 +135,8 @@
 
 
 <script setup lang="ts">
+import { onMounted } from "vue";
+import gsap from "gsap";
 
 const query = groq`{
    "page":*[_type == "page" && pageType == 'home'][0]{..., homePage{...}}, 
@@ -143,5 +148,42 @@ const { data: data } = useSanityQuery(query);
 definePageMeta({
   title: 'Home • CV - Emmanuelle Vo'
 })
+
+onMounted(() => {
+    gsap.fromTo(".header__container", 
+      { y: '10%', opacity: 0 },
+      { y: '0%', opacity: 1, duration: 1.5, ease: 'power2.out' }
+    );
+
+    const elements = [
+      { selector: ".home__s1__container .excerpt--big", xStart: '15%' },
+      { selector: ".home__s1__container .excerpt", xStart: '-15%' },
+      { selector: ".home__s1 .title--section-mark", yStart: '-15%' },
+      { selector: ".home__s2", yStart: '15%' },
+      { selector: ".home__s2 .card__figure-container", stagger: 0.5 },
+      { selector: ".title--section", yStart: '-15%' },
+      { selector: ".home__s3__container-left", xStart: '-15%' },
+      { selector: ".home__s3__list", xStart: '15%', stagger: 1 },
+    ];
+
+    elements.forEach(({ selector, xStart = '0%', yStart = '0%', stagger = 0 }) => {
+      gsap.fromTo(selector, 
+        { x: xStart, y: yStart, opacity: 0 },
+        { 
+          x: '0%', y: '0%', opacity: 1, duration: 2, ease: 'power2.out',
+          stagger: stagger,
+          scrollTrigger: {
+            trigger: selector,
+            start: 'top 80%',
+            end: 'top 30%',
+            scrub: true,
+            once: true,
+          }
+        }
+      );
+    });
+
+
+  });
 
 </script>

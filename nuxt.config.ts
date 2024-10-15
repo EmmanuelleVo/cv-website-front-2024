@@ -13,6 +13,11 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-swiper'
   ],
+
+  build: {
+    transpile: ['gsap'],
+  },
+  
   googleFonts: {
     families: {
       Poppins: {

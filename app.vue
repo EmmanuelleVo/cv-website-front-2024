@@ -8,6 +8,11 @@
 </template>
 
 <script setup lang="ts">
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
   const title = ref('CV - Emmanuelle')
   const description = ref('This is Emmanuelle Vo’CV website.')  
 

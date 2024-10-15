@@ -121,9 +121,10 @@
   &__mark {
     position: absolute;
     left: -4vw;
-    bottom: rem(70px);
+    bottom: rem(150px);
 
-    @include mq($until: laptop) {
+
+    @include mq($until: tablet) {
       display: none;
     }
 
@@ -134,5 +135,44 @@
       letter-spacing: .1em;
       transform: rotateX(180deg) rotateY(180deg) rotate(0);
     }
+
+    &-decoration {
+      display: block;
+      width: rem(10px);
+      height: rem(34px);
+      margin: rem(40px) auto 0;
+      position: relative;
+      overflow: hidden;
+    }
+    &-line {
+      display: block;
+      background-color: $cYellow;
+      transform-origin: 0 100%;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: scrollDown 1s cubic-bezier(.58,.3,.005,1) infinite;
+    }
+  }
+}
+
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(100%);
+  }
+  41% {
+    opacity: 0;
+  }
+  42% {
+      transform: translateY(-100%);
+  }
+  100% {
+      transform: translateY(0);
   }
 }
